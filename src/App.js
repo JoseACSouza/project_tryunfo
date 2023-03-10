@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './components/Card';
 import CardList from './components/CardList';
+import Filters from './components/Filters';
 import Form from './components/Form';
 
 class App extends React.Component {
@@ -14,6 +15,8 @@ class App extends React.Component {
       cardAttr3: '',
       cardImage: '',
       cardRare: '',
+      rareFilter: '',
+      nameFilter: '',
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
@@ -114,7 +117,8 @@ class App extends React.Component {
     const {
       cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage, cardRare,
-      cardTrunfo, hasTrunfo, isSaveButtonDisabled, onSaveButtonClick } = this.state;
+      cardTrunfo, hasTrunfo, isSaveButtonDisabled,
+      nameFilter, rareFilter, onSaveButtonClick } = this.state;
 
     return (
       <div>
@@ -150,9 +154,16 @@ class App extends React.Component {
             deleteButton={ this.deleteButton }
           />
         </div>
+        <Filters
+          onInputChange={ this.onInputChange }
+          nameFilter={ nameFilter }
+          rareFilter={ rareFilter }
+        />
         <CardList
           onSaveButtonClick={ onSaveButtonClick }
           deleteButton={ this.deleteButton }
+          nameFilter={ nameFilter }
+          rareFilter={ rareFilter }
         />
       </div>
     );
