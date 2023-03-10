@@ -17,6 +17,7 @@ class App extends React.Component {
       cardRare: '',
       rareFilter: '',
       nameFilter: '',
+      trunfoFilter: false,
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
@@ -118,7 +119,7 @@ class App extends React.Component {
       cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage, cardRare,
       cardTrunfo, hasTrunfo, isSaveButtonDisabled,
-      nameFilter, rareFilter, onSaveButtonClick } = this.state;
+      nameFilter, rareFilter, trunfoFilter, onSaveButtonClick } = this.state;
 
     return (
       <div>
@@ -158,12 +159,14 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           nameFilter={ nameFilter }
           rareFilter={ rareFilter }
+          trunfoFilter={ trunfoFilter }
         />
         <CardList
           onSaveButtonClick={ onSaveButtonClick }
           deleteButton={ this.deleteButton }
           nameFilter={ nameFilter }
           rareFilter={ rareFilter }
+          trunfoFilter={ trunfoFilter }
         />
       </div>
     );

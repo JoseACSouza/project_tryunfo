@@ -4,34 +4,56 @@ import Card from './Card';
 
 class CardList extends React.Component {
   render() {
-    const { onSaveButtonClick, nameFilter, rareFilter } = this.props;
+    const { onSaveButtonClick, nameFilter, rareFilter, trunfoFilter } = this.props;
     const { deleteButton } = this.props;
     return (
       <div>
         {
-          onSaveButtonClick
-            .filter((card) => card.cardName.includes(nameFilter))
-            .filter((card) => card.cardRare === rareFilter || rareFilter === '')
-            .map((card) => {
-              const { cardName, cardDescription, cardAttr1,
-                cardAttr2, cardAttr3, cardImage, cardRare,
-                cardTrunfo } = card;
-              return (
-                <Card
-                  key={ cardName }
-                  cardName={ cardName }
-                  cardDescription={ cardDescription }
-                  cardAttr1={ cardAttr1 }
-                  cardAttr2={ cardAttr2 }
-                  cardAttr3={ cardAttr3 }
-                  cardImage={ cardImage }
-                  cardRare={ cardRare }
-                  cardTrunfo={ cardTrunfo }
-                  isPreview={ false }
-                  deleteButton={ deleteButton }
-                />
-              );
-            })
+          !trunfoFilter
+            ? onSaveButtonClick
+              .filter((card) => card.cardName.includes(nameFilter))
+              .filter((card) => card.cardRare === rareFilter || rareFilter === '')
+              .map((card) => {
+                const { cardName, cardDescription, cardAttr1,
+                  cardAttr2, cardAttr3, cardImage, cardRare,
+                  cardTrunfo } = card;
+                return (
+                  <Card
+                    key={ cardName }
+                    cardName={ cardName }
+                    cardDescription={ cardDescription }
+                    cardAttr1={ cardAttr1 }
+                    cardAttr2={ cardAttr2 }
+                    cardAttr3={ cardAttr3 }
+                    cardImage={ cardImage }
+                    cardRare={ cardRare }
+                    cardTrunfo={ cardTrunfo }
+                    isPreview={ false }
+                    deleteButton={ deleteButton }
+                  />
+                );
+              }) : onSaveButtonClick
+              .filter((card) => card.cardTrunfo)
+              .map((card) => {
+                const { cardName, cardDescription, cardAttr1,
+                  cardAttr2, cardAttr3, cardImage, cardRare,
+                  cardTrunfo } = card;
+                return (
+                  <Card
+                    key={ cardName }
+                    cardName={ cardName }
+                    cardDescription={ cardDescription }
+                    cardAttr1={ cardAttr1 }
+                    cardAttr2={ cardAttr2 }
+                    cardAttr3={ cardAttr3 }
+                    cardImage={ cardImage }
+                    cardRare={ cardRare }
+                    cardTrunfo={ cardTrunfo }
+                    isPreview={ false }
+                    deleteButton={ deleteButton }
+                  />
+                );
+              })
         }
       </div>
     );
@@ -42,6 +64,7 @@ CardList.propTypes = {
   deleteButton: PropTypes.func.isRequired,
   nameFilter: PropTypes.string.isRequired,
   rareFilter: PropTypes.string.isRequired,
+  trunfoFilter: PropTypes.bool.isRequired,
 };
 
 export default CardList;
