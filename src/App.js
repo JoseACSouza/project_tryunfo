@@ -24,11 +24,18 @@ class App extends React.Component {
   hasTrunfo = () => {
     const { onSaveButtonClick } = this.state;
     const verifyTrunfo = onSaveButtonClick.some((item) => item.cardTrunfo);
-    if (verifyTrunfo) {
-      this.setState({
-        hasTrunfo: true,
-      });
-    }
+    this.setState({
+      hasTrunfo: verifyTrunfo,
+    });
+  };
+
+  deleteButton = (event) => {
+    const { onSaveButtonClick } = this.state;
+    const clickedTarget = event.target.name;
+    this.setState({
+      onSaveButtonClick: onSaveButtonClick
+        .filter((item) => item.cardName !== clickedTarget),
+    }, this.hasTrunfo);
   };
 
   onInputChange = ({ target }) => {
@@ -139,10 +146,13 @@ class App extends React.Component {
             cardImage={ cardImage }
             cardRare={ cardRare }
             cardTrunfo={ cardTrunfo }
+            isPreview
+            deleteButton={ this.deleteButton }
           />
         </div>
         <CardList
           onSaveButtonClick={ onSaveButtonClick }
+          deleteButton={ this.deleteButton }
         />
       </div>
     );

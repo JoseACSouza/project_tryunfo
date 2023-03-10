@@ -5,6 +5,7 @@ import Card from './Card';
 class CardList extends React.Component {
   render() {
     const { onSaveButtonClick } = this.props;
+    const { deleteButton } = this.props;
     return (
       <div>
         {
@@ -23,6 +24,8 @@ class CardList extends React.Component {
                 cardImage={ cardImage }
                 cardRare={ cardRare }
                 cardTrunfo={ cardTrunfo }
+                isPreview={ false }
+                deleteButton={ deleteButton }
               />
             );
           })
@@ -33,6 +36,7 @@ class CardList extends React.Component {
 }
 CardList.propTypes = {
   onSaveButtonClick: PropTypes.string.isRequired,
+  deleteButton: PropTypes.func.isRequired,
 };
 
 export default CardList;
