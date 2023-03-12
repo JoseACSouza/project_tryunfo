@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './card.css';
 
 class Card extends React.Component {
   render() {
@@ -8,8 +9,8 @@ class Card extends React.Component {
       cardAttr2, cardAttr3, cardImage, cardRare,
       cardTrunfo, isPreview, deleteButton } = this.props;
     return (
-      <div>
-        <h2 data-testid="name-card">
+      <div className="card">
+        <h2 data-testid="name-card" className="name-card">
           { cardName }
         </h2>
         <img
@@ -17,22 +18,33 @@ class Card extends React.Component {
           alt={ cardName }
           data-testid="image-card"
         />
-        <p data-testid="description-card">
+        <p data-testid="description-card" className="description-card">
           { cardDescription }
         </p>
-        <p data-testid="attr1-card">
-          { cardAttr1 }
-        </p>
-        <p data-testid="attr2-card">
-          { cardAttr2 }
-        </p>
-        <p data-testid="attr3-card">
-          { cardAttr3 }
-        </p>
-        <p data-testid="rare-card">
+        <div className="stats">
+          <div className="stats">
+            <p className="str">FOR:</p>
+            <p data-testid="attr1-card" className="attr1-card">
+              { cardAttr1 }
+            </p>
+          </div>
+          <div className="stats">
+            <p className="dex">AGI:</p>
+            <p data-testid="attr2-card" className="attr2-card">
+              { cardAttr2 }
+            </p>
+          </div>
+          <div className="stats">
+            <p className="int">INT:</p>
+            <p data-testid="attr3-card" className="attr3-card">
+              { cardAttr3 }
+            </p>
+          </div>
+        </div>
+        <p data-testid="rare-card" className={ cardRare.split(' ')[0] }>
           { cardRare }
         </p>
-        <p data-testid={ cardTrunfo ? 'trunfo-card' : '' }>
+        <p data-testid={ cardTrunfo ? 'trunfo-card' : '' } className="trunfo">
           { cardTrunfo ? 'Super Trunfo' : '' }
         </p>
         {

@@ -1,0 +1,74 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #937460;
+  max-width: 250px;
+  max-height: 450px;
+  border: 5px solid #5f3426;
+  border-radius: 5px;
+}
+.card img{
+  width: 100%;
+  height: 200px;
+}
+
+.name-card{
+  text-align: center;
+  background-color: #889c9b;
+  margin: 0;
+  padding: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.description-card{
+  background-color: #a59075;
+  margin: 0;
+  padding-top: 4px;
+  padding-bottom: 10px;
+  width: 100%;
+  height: 70px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-radius: 5px;
+  font-size: 12px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  overflow-wrap: break-word;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.muito {
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  color: gold;
+}
+
+.raro {
+  font-weight: 450;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  color: #005b96;
+}
+
+.normal {
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+
+.trunfo {
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #740707;
+}
