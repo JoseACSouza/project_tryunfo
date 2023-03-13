@@ -4,6 +4,8 @@ import CardList from './components/CardList';
 import Filters from './components/Filters';
 import Form from './components/Form';
 
+import './app.css';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -124,36 +126,38 @@ class App extends React.Component {
     return (
       <div>
         <header>
-          <h1>Tryunfo</h1>
-          <h2>Adicione uma carta</h2>
+          <h1>Tryunfo Medieval</h1>
         </header>
-        <div className="input-newcard">
-          <Form
-            onInputChange={ this.onInputChange }
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-            hasTrunfo={ hasTrunfo }
-            isSaveButtonDisabled={ isSaveButtonDisabled }
-            onSaveButtonClick={ this.onSaveButtonClick }
-          />
-          <Card
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-            isPreview
-            deleteButton={ this.deleteButton }
-          />
+        <div className="input">
+          <h2>Adicione uma carta</h2>
+          <div className="input-newcard">
+            <Form
+              onInputChange={ this.onInputChange }
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onSaveButtonClick={ this.onSaveButtonClick }
+            />
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              isPreview
+              deleteButton={ this.deleteButton }
+            />
+          </div>
         </div>
         <Filters
           onInputChange={ this.onInputChange }

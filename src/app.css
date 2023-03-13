@@ -1,0 +1,37 @@
+body{
+  background-color: #FFF3CC;
+  background-size: 100%;
+}
+input, textarea, select{
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+h2, h1{
+  text-align: center;
+}
+h2{
+  background-color: antiquewhite;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+label{
+  font-weight: bolder;
+  background-color: rgba(255, 255, 255, 0.01);
+  padding: 1px;
+}
+
+.input-newcard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input{
+  background-color: rgba(165,144,117,0.8);
+  border: 3px groove gray;
+  border-radius: 5px;
+  margin-top: 5px;
+}
