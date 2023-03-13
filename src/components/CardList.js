@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
+import './cardList.css';
 
 class CardList extends React.Component {
   render() {
     const { onSaveButtonClick, nameFilter, rareFilter, trunfoFilter } = this.props;
     const { deleteButton } = this.props;
     return (
-      <div>
+      <div className="card-list">
         {
           !trunfoFilter
             ? onSaveButtonClick

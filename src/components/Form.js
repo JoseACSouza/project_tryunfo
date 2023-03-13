@@ -89,6 +89,7 @@ class Form extends React.Component {
           <label>
             {' '}
             Super Trunfo?
+            {' '}
             {
               hasTrunfo ? 'Você já tem um Super Trunfo em seu baralho' : <input
                 type="checkbox"
