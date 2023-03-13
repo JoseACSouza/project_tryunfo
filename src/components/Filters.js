@@ -33,6 +33,7 @@ class Filters extends React.Component {
             name="trunfoFilter"
             type="checkbox"
             data-testid="trunfo-filter"
+            className="checkbox"
             checked={ trunfoFilter }
             onChange={ onInputChange }
           />

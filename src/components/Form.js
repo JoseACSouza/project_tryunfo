@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './form.css';
 
 class Form extends React.Component {
   render() {
@@ -9,9 +10,8 @@ class Form extends React.Component {
       cardTrunfo, hasTrunfo, isSaveButtonDisabled,
       onInputChange, onSaveButtonClick } = this.props;
     return (
-      <div>
+      <div className="form">
         <form>
-          <legend>Nova Carta!</legend>
           <label>
             Nome da Carta
             <input
@@ -39,6 +39,7 @@ class Form extends React.Component {
               data-testid="attr1-input"
               value={ cardAttr1 }
               onChange={ onInputChange }
+              className="att"
             />
           </label>
           <label>
@@ -49,6 +50,7 @@ class Form extends React.Component {
               data-testid="attr2-input"
               value={ cardAttr2 }
               onChange={ onInputChange }
+              className="att"
             />
           </label>
           <label>
@@ -59,6 +61,7 @@ class Form extends React.Component {
               data-testid="attr3-input"
               value={ cardAttr3 }
               onChange={ onInputChange }
+              className="att"
             />
           </label>
           <label>
@@ -84,11 +87,14 @@ class Form extends React.Component {
             </select>
           </label>
           <label>
+            {' '}
+            Super Trunfo?
             {
               hasTrunfo ? 'Você já tem um Super Trunfo em seu baralho' : <input
                 type="checkbox"
                 name="cardTrunfo"
                 data-testid="trunfo-input"
+                className="checkbox"
                 checked={ cardTrunfo }
                 onChange={ onInputChange }
               />

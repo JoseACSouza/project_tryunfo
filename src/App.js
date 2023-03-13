@@ -127,7 +127,7 @@ class App extends React.Component {
           <h1>Tryunfo</h1>
           <h2>Adicione uma carta</h2>
         </header>
-        <div>
+        <div className="input-newcard">
           <Form
             onInputChange={ this.onInputChange }
             cardName={ cardName }
