@@ -1,8 +1,8 @@
 # Super Trunfo Medieval
 
-:card: Neste projeto desenvolvo um deck-builder de um jogo de super trunfo :card:
+♠️: Neste projeto desenvolvo um deck-builder de um jogo de super trunfo ♠️
 
 ## Tecnologias Utilizadas
 
-  *ReactJS
-  *CSS3
+  * ReactJS
+  * CSS3
